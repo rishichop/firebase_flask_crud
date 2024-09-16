@@ -87,6 +87,8 @@ def delete_user():
         user = users_ref.child(f"User{id}")
         if user.get():
             user.delete()
+            current_count = counter_ref.get()
+            counter_ref.set(current_count - 1)
             return make_response(jsonify({"message": "user deleted"}), 200)
         return make_response(jsonify({"message": "user not found"}), 404)
     except:

@@ -21,6 +21,6 @@ users_ref = ref.child("users")
 counter_ref = users_ref.child("counter")
 
 
-print(counter_ref.get())
+print(counter_ref.get() - 1)
 
-print(users_ref.child(f"User{3}"))
+# print(users_ref.child(f"User{3}"))
